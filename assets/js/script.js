@@ -19,7 +19,7 @@ $(function(){
 			addWeather(
 				this.weather[0].icon,
 				moment(localTime).calendar(),	// We are using the moment.js library to format the date
-				this.weather[0].description + ' <b>' + Math.round(this.main.temp) + '°C' + '</b>'
+				this.weather[0].description + ' <b>' + Math.round(this.temp.day) + '°C' + '</b>'
 			);
 		});
 		// Add the location to the page
