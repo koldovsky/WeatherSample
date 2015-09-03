@@ -3,7 +3,7 @@ function getWeatherData(lang, fnOK, fnError) {
 
     function locSuccess(position) {
         // Check cache
-        var cache = localStorage.weatherCache && JSON.parse(localStorage.weatherCache);
+        var cache = localStorage.weatherCache5x3 && JSON.parse(localStorage.weatherCache5x3);
         var currDate = new Date();
         // If the cache is newer than 30 minutes, use the cache
         if(cache && cache.timestamp && cache.timestamp > currDate.getTime() - 30*60*1000){
@@ -14,7 +14,7 @@ function getWeatherData(lang, fnOK, fnError) {
                 position.coords.longitude + '&units=metric' + '&lang=' + lang + '&callback=?',
                 function (response) {
                     // Store the cache
-                    localStorage.weatherCache = JSON.stringify({
+                    localStorage.weatherCache5x3 = JSON.stringify({
                         timestamp: (new Date()).getTime(),	// getTime() returns milliseconds
                         data: response
                     });
